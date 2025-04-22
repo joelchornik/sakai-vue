@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query'
 import App from './App.vue';
 import router from './router';
 
@@ -23,4 +24,5 @@ app.use(PrimeVue, {
 app.use(ToastService);
 app.use(ConfirmationService);
 
+app.use(VueQueryPlugin, { queryClient: new QueryClient() })
 app.mount('#app');

@@ -135,4 +135,21 @@ const router = createRouter({
     ]
 });
 
+// check if user is logged in and redirect to login page if not
+router.beforeEach(async (to) => {
+    const publicPages = ['/auth/', '/pages/'];
+    let authRequired = !publicPages.includes(to.path);
+
+    // const auth = useUserStore();
+
+    // if (authRequired && !auth.isLoggedIn) {
+    //     auth.returnUrl = to.fullPath;
+    //     return '/login';
+    // }
+
+    // if (auth.isLoggedIn && to.path == '/login') {
+    //     return '/';
+    // }
+});
+
 export default router;
