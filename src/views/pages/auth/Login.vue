@@ -1,8 +1,8 @@
 <script setup>
 import FloatingConfigurator from '@/components/FloatingConfigurator.vue';
-import { ref } from 'vue';
-import { useMutation } from '@tanstack/vue-query';
 import api from '@/service/cprapi';
+import { useMutation } from '@tanstack/vue-query';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -12,14 +12,14 @@ const password = ref('');
 
 const login = useMutation({
     mutationFn: () =>
-        api.post('/auth/login', {
+        api.post('/login', {
             username: username.value,
             password: password.value
         }),
     onSuccess: (res) => {
         localStorage.setItem('accessToken', res.data.accessToken);
         localStorage.setItem('refreshToken', res.data.refreshToken);
-        router.push('/')
+        router.push('/');
     }
 });
 
