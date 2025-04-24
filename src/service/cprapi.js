@@ -1,3 +1,4 @@
+import { useUserStore } from '@/store/userStore'; // Import the user store
 import axios from 'axios';
 
 const api = axios.create({ baseURL: 'https://localhost:5001/api' });
@@ -19,6 +20,8 @@ api.interceptors.response.use(
                 err.config.headers.Authorization = `Bearer ${res.data.accessToken}`;
                 return api(err.config);
             } catch {
+                const userStore = useUserStore();
+                userStore.clearUser(); // Clear user info from the store
                 localStorage.clear();
                 window.location.href = '/auth/login';
                 return Promise.reject(err);

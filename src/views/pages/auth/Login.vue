@@ -1,10 +1,13 @@
 <script setup>
 import FloatingConfigurator from '@/components/FloatingConfigurator.vue';
 import api from '@/service/cprapi';
+import { useUserStore } from '@/store/userStore'; // Import the user store
 import { useMutation } from '@tanstack/vue-query';
+import { jwtDecode } from 'jwt-decode';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
+const userStore = useUserStore(); // Initialize the user store
 const router = useRouter();
 const checked = ref(false);
 const username = ref('');
@@ -19,6 +22,10 @@ const login = useMutation({
     onSuccess: (res) => {
         localStorage.setItem('accessToken', res.data.accessToken);
         localStorage.setItem('refreshToken', res.data.refreshToken);
+
+        const decodedToken = jwtDecode(res.data.accessToken);
+        userStore.setUser({ name: decodedToken?.['name'], sub: decodedToken?.['sub'] }); // Ensure name is stored
+
         router.push('/');
     }
 });
