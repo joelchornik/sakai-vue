@@ -15,7 +15,7 @@ const exportCSV = () => datatable.value.exportCSV();
 
 <template>
     <div class="card">
-        <DataTable ref="datatable" :isLoading="isLoading" :value="data?.items" :rows="10" :paginator="true" responsiveLayout="scroll" :filters="filters">
+        <DataTable ref="datatable" :isLoading="isLoading" :value="data?.items" :rows="6" :paginator="true" responsiveLayout="scroll" :filters="filters">
             <template #header>
                 <div class="flex items-center justify-between gap-2">
                     <div class="flex-grow-1 mr-2">

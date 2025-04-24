@@ -131,6 +131,11 @@ const router = createRouter({
             path: '/auth/error',
             name: 'error',
             component: () => import('@/views/pages/auth/Error.vue')
+        },
+        {
+            path: '/qr-scanner',
+            name: 'qr-scanner',
+            component: () => import('@/components/CodeReader.vue')
         }
     ]
 });

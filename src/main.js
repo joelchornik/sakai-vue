@@ -10,6 +10,7 @@ import Aura from '@primeuix/themes/aura';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
+import { VueQrcodeReader } from 'vue-qrcode-reader';
 
 import '@/assets/styles.scss';
 
@@ -18,6 +19,10 @@ const pinia = createPinia();
 
 app.use(router);
 app.use(pinia);
+app.use(VueQrcodeReader, {
+    defaultCamera: 'environment', // 'environment' for rear camera, 'user' for front camera
+    defaultFacingMode: 'environment' // 'environment' for rear camera, 'user' for front camera
+});
 app.use(PrimeVue, {
     theme: {
         preset: Aura,

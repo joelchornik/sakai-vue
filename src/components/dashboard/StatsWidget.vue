@@ -33,30 +33,30 @@
         <div class="card mb-0">
             <div class="flex justify-between mb-4">
                 <div>
-                    <span class="block text-muted-color font-medium mb-4">Customers</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">28441</div>
+                    <span class="block text-muted-color font-medium mb-4">Stock Crudo</span>
+                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">210.034 Kg</div>
                 </div>
                 <div class="flex items-center justify-center bg-cyan-100 dark:bg-cyan-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
                     <i class="pi pi-users text-cyan-500 !text-xl"></i>
                 </div>
             </div>
-            <span class="text-primary font-medium">520 </span>
-            <span class="text-muted-color">newly registered</span>
+            <span class="text-primary font-medium">+3% </span>
+            <span class="text-muted-color">últimos 30 días</span>
         </div>
     </div>
     <div class="col-span-12 lg:col-span-6 xl:col-span-3">
         <div class="card mb-0">
             <div class="flex justify-between mb-4">
                 <div>
-                    <span class="block text-muted-color font-medium mb-4">Comments</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152 Unread</div>
+                    <span class="block text-muted-color font-medium mb-4">Stock Terminado</span>
+                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">80.510 Kg</div>
                 </div>
                 <div class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
                     <i class="pi pi-comment text-purple-500 !text-xl"></i>
                 </div>
             </div>
-            <span class="text-primary font-medium">85 </span>
-            <span class="text-muted-color">responded</span>
+            <span class="text-red-500 font-medium">-7% </span>
+            <span class="text-muted-color">últimos 30 días</span>
         </div>
     </div>
 </template>
