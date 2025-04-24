@@ -1,7 +1,7 @@
 <script setup>
+import ArticuloCrudo from '@/components/ArticuloCrudo/ArticuloCrudo.vue';
 import BestSellingWidget from '@/components/dashboard/BestSellingWidget.vue';
 import NotificationsWidget from '@/components/dashboard/NotificationsWidget.vue';
-import RecentSalesWidget from '@/components/dashboard/RecentSalesWidget.vue';
 import StatsWidget from '@/components/dashboard/StatsWidget.vue';
 </script>
 
@@ -14,7 +14,7 @@ import StatsWidget from '@/components/dashboard/StatsWidget.vue';
             <BestSellingWidget />
         </div>
         <div class="col-span-12 xl:col-span-6">
-            <RecentSalesWidget />
+            <ArticuloCrudo />
         </div>
     </div>
 </template>

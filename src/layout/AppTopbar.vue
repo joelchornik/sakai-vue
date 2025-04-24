@@ -13,7 +13,7 @@ const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
                 <i class="pi pi-bars"></i>
             </button>
             <router-link to="/" class="layout-topbar-logo">
-                <span>TEXCOM</span>
+                <img src="/img/logo.png" class="w-32" />
             </router-link>
         </div>
 
