@@ -1,5 +1,6 @@
 <script setup>
 import PiezaView from '@/components/Pieza/PiezaView.vue';
+// import PiezaService from '@/service/Pieza/PiezaService';
 import { reactive, ref } from 'vue';
 import { QrcodeStream } from 'vue-qrcode-reader';
 
@@ -7,6 +8,8 @@ const facingMode = ref('environment');
 const torchEnabled = ref(false);
 const detectedBarcodes = reactive([]);
 const lastDetectedBarcode = ref(null);
+// const { data, isLoading, isFetching } = PiezaService.getById(lastDetectedBarcode.value.rawValue);
+// const cdgPedidoProduccion = ref(data?.cdgPedidoProduccion);
 
 const switchCamera = () => {
     facingMode.value = facingMode.value === 'environment' ? 'user' : 'environment';
