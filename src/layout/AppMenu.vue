@@ -12,6 +12,10 @@ const model = ref([
         ]
     },
     {
+        label: 'Herramientas',
+        items: [{ label: 'Lector Piezas', icon: 'pi pi-fw pi-camera', to: '/qr-scanner' }]
+    },
+    {
         label: 'Maestros',
         items: [
             { label: 'Artículos Crudos', icon: 'pi pi-fw pi-book', to: '/maestros/articulos/crudos' },
@@ -40,10 +44,6 @@ const model = ref([
             { label: 'Logística', icon: 'pi pi-fw pi-book', to: '/logistica' },
             { label: 'Logística en Proceso', icon: 'pi pi-fw pi-book', to: '/logistica/proceso' }
         ]
-    },
-    {
-        label: 'Herramientas',
-        items: [{ label: 'QR Scanner', icon: 'pi pi-fw pi-camera', to: '/qr-scanner' }]
     }
 ]);
 </script>

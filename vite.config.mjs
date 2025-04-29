@@ -5,7 +5,6 @@ import { fileURLToPath, URL } from 'node:url';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
     optimizeDeps: {
@@ -21,6 +20,11 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
+    },
+    server: {
+        hmr: {
+            protocol: 'wss' // Use WebSocket over SSL
         }
     }
 });

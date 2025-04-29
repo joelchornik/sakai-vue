@@ -1,16 +1,16 @@
+import Aura from '@primeuix/themes/aura';
+import * as Sentry from '@sentry/vue';
 import { QueryClient, VueQueryPlugin } from '@tanstack/vue-query';
 import { jwtDecode } from 'jwt-decode';
 import { createPinia } from 'pinia';
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import { useUserStore } from './store/userStore'; // Import the user store
-
-import Aura from '@primeuix/themes/aura';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
+import { createApp } from 'vue';
 import { VueQrcodeReader } from 'vue-qrcode-reader';
+import App from './App.vue';
+import router from './router';
+import { useUserStore } from './store/userStore'; // Import the user store
 
 import '@/assets/styles.scss';
 
@@ -50,5 +50,13 @@ if (token) {
 } else {
     router.push('/auth/login'); // Redirect to login if no token is found
 }
+
+Sentry.init({
+    app,
+    dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
+
+    sendDefaultPii: true,
+    integrations: []
+});
 
 app.mount('#app');

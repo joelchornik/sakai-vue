@@ -1,8 +1,8 @@
 <script setup>
-import ArticuloCrudoService from '@/service/ArticuloCrudo/ArticuloCrudoService';
+import PedidoProduccionService from '@/service/PedidoProduccion/PedidoProduccionService';
 import { FilterMatchMode } from '@primevue/core/api';
 import { ref } from 'vue';
-const { data, isLoading, isFetching, refetch } = ArticuloCrudoService.get({ PageSize: 100 });
+const { data, isLoading, isFetching, refetch } = PedidoProduccionService.get({ PageSize: 100 });
 
 // non-api related stuff
 const filters = ref({
@@ -19,7 +19,7 @@ const exportCSV = () => datatable.value.exportCSV();
             <template #header>
                 <div class="flex flex-wrap items-center justify-between">
                     <div class="flex-grow-1 mr-2">
-                        <div class="font-semibold text-xl mb-4">Artículos Crudos</div>
+                        <div class="font-semibold text-xl mb-4">Pedidos a Producción</div>
                     </div>
                     <div class="flex flex-none">
                         <span class="p-input-icon-left mr-2">
@@ -33,10 +33,11 @@ const exportCSV = () => datatable.value.exportCSV();
                     </div>
                 </div>
             </template>
-            <Column field="dscArticuloCrudo" header="Artículo" :sortable="true" style="width: 35%"></Column>
-            <Column field="pesoSTD" header="Peso Estándar" :sortable="true" style="width: 10%"> </Column>
-            <Column field="anchoSTD" header="Ancho Estándar" :sortable="true" style="width: 10%"> </Column>
-            <Column field="rindeSTD" header="Rinde Estándar" :sortable="true" style="width: 10%"> </Column>
+            <Column field="cdgPedidoProduccion" header="#PP" :sortable="true" style="width: 10%"> </Column>
+            <Column field="dscEstadoPedidoProduccion" header="Estado" :sortable="true" style="width: 10%"> </Column>
+            <Column field="dscArticulo" header="Artículo" :sortable="true" style="width: 35%"></Column>
+            <Column field="kilosPedido" header="Kg" :sortable="true" style="width: 10%"> </Column>
+            <Column field="metrosPedido" header="Metros" :sortable="true" style="width: 10%"> </Column>
             <Column style="width: 15%" header="Detalle">
                 <template #body>
                     <Button icon="pi pi-search" type="button" class="p-button-text"></Button>

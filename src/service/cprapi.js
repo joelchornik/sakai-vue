@@ -1,7 +1,7 @@
 import { useUserStore } from '@/store/userStore'; // Import the user store
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'https://localhost:5001/api' });
+const api = axios.create({ baseURL: 'https://10.10.11.94:5001/api' });
 
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('accessToken');
